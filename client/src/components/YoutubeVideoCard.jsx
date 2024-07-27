@@ -8,7 +8,7 @@ const YouTubeVideoCard = ({ video }) => {
 
   return (
     <div
-      className="group relative w-full max-w-[400px] h-[300px] border-4 border-blue-600 hover:border-blue-800 overflow-hidden rounded-lg transition-all duration-300 cursor-pointer"
+      className="group relative w-full max-w-[400px] h-[350px] border-4 bg-white border-blue-600 hover:border-blue-800 overflow-hidden rounded-[30px] transition-all duration-300 cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() =>
@@ -16,17 +16,17 @@ const YouTubeVideoCard = ({ video }) => {
       }
     >
       <div
-        className={`w-full h-[60%] block overflow-hidden transition-transform duration-300 ${
+        className={`w-full h-[60%] flex items-center justify-center p-4 transition-transform duration-300 bg-gray-100 ${
           isHovered ? "transform scale-105" : ""
         }`}
       >
         <img
           src={video.coverImage}
           alt={video.heading}
-          className="w-full h-full object-cover"
+          className="w-auto h-full object-cover rounded-[20px]"
         />
       </div>
-      <div className="p-3 flex flex-col gap-2 h-[40%] justify-between">
+      <div className="p-4 flex flex-col gap-2 h-[40%] justify-center items-center text-center bg-white">
         <p className="text-lg font-semibold line-clamp-2 group-hover:text-blue-800 transition-all duration-300">
           {video.heading}
         </p>
