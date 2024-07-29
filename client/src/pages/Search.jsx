@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Select, TextInput } from "flowbite-react";
 import PostCard from "../components/PostCard";
+import BackButton from "../components/backButton";
 
 export default function Search() {
   const [sidebarData, setSidebarData] = useState({
@@ -78,6 +79,7 @@ export default function Search() {
 
   return (
     <div className="flex flex-col md:flex-row">
+      <BackButton />
       <div className="p-4 md:p-7 border-b md:border-r md:min-h-screen border-gray-500 w-full md:w-1/3 lg:w-1/4 xl:w-1/5">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row items-center gap-4">
