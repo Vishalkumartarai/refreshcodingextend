@@ -8,7 +8,7 @@ const YouTubeVideoCard = ({ video }) => {
 
   return (
     <div
-      className="group relative w-full max-w-[400px] h-[350px] border-4 bg-white border-blue-600 hover:border-blue-800 overflow-hidden rounded-[30px] transition-all duration-300 cursor-pointer"
+      className="relative w-full max-w-[400px] h-[350px] border-4 bg-white border-blue-600 hover:border-blue-800 overflow-hidden rounded-[30px] transition-all duration-300 cursor-pointer mx-auto"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() =>

@@ -8,6 +8,7 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase"; // Adjust the import path as needed
 import { useNavigate } from "react-router-dom";
+import BackButton from "../components/backButton";
 
 const defaultCourseThumbnail = "./images/achv/2.png"; // Replace with your default image path
 
@@ -125,6 +126,7 @@ const CreateCourse = () => {
 
   return (
     <main className="p-3 flex flex-col w-full mx-auto min-h-screen">
+      <BackButton />
       <h1 className="text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
         Create a Course
       </h1>

@@ -40,13 +40,15 @@ export default function FooterCom() {
             </div>
             <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
               <div>
-                <Footer.Title title="About" />
-                <Footer.LinkGroup col>
-                  <Footer.Link href="/about" rel="noopener noreferrer">
-                    Refresh Coding
-                  </Footer.Link>
-                </Footer.LinkGroup>
+                <Footer.Title title="Email Us" />
+                <a
+                  href="mailto:mrefreshcoding@gmail.com"
+                  className="text-gray-500 text-sm"
+                >
+                  mrefreshcoding@gmail.com
+                </a>
               </div>
+
               <div>
                 <Footer.Title title="Follow us" />
                 <Footer.LinkGroup col>
@@ -70,13 +72,12 @@ export default function FooterCom() {
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title="Email Us" />
-                <a
-                  href="mailto:mrefreshcoding@gmail.com"
-                  className="text-gray-500 text-sm"
-                >
-                  mrefreshcoding@gmail.com
-                </a>
+                <Footer.Title title="About" />
+                <Footer.LinkGroup col>
+                  <Footer.Link href="/about" rel="noopener noreferrer">
+                    Refresh Coding
+                  </Footer.Link>
+                </Footer.LinkGroup>
               </div>
             </div>
           </div>
@@ -111,7 +112,7 @@ export default function FooterCom() {
               />
             </div>
             <div className="text-center mt-4">
-              <span className="text-gray-500 text-sm">Designed by </span>
+              <span className="text-gray-500 text-sm">Developed by </span>
               <a
                 href="https://www.linkedin.com/in/vishal-kumar-tarai-318773223/"
                 target="_blank"
