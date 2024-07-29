@@ -1,6 +1,9 @@
+import BackButton from "../components/backButton";
+
 export default function About() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-700">
+      <BackButton />
       <div className="max-w-2xl mx-auto p-6 text-center">
         <div>
           <h1 className="text-3xl font-semibold text-center my-7 text-purple-700">

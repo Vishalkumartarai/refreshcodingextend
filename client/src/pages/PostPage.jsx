@@ -1,9 +1,10 @@
-import { Button, Spinner } from "flowbite-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Button, Spinner } from "flowbite-react";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
+import BackButton from "../components/backButton"; // Adjust the path to where BackButton.js is located
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -57,8 +58,10 @@ export default function PostPage() {
         <Spinner size="xl" />
       </div>
     );
+
   return (
     <main className="p-3 flex flex-col w-fulll mx-auto min-h-screen">
+      <BackButton /> {/* Add the BackButton at the top */}
       <h1 className="text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
         {post && post.title}
       </h1>
@@ -85,9 +88,7 @@ export default function PostPage() {
         className="p-3 max-w-2xl mx-auto w-full post-content"
         dangerouslySetInnerHTML={{ __html: post && post.content }}
       ></div>
-
       <CommentSection postId={post._id} />
-
       <div className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-xl mt-5">Recent articles</h1>
         <div className="flex flex-wrap gap-5 mt-5 justify-center">

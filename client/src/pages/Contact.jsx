@@ -1,8 +1,10 @@
 import React from "react";
+import BackButton from "../components/backButton"; // Adjust the path to where BackButton.js is located
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <section className="py-36">
+      <BackButton /> {/* Place the BackButton at the top of the section */}
       <h2 className="text-3xl font-bold text-center mb-12">
         Feel free to contact us
       </h2>
@@ -15,7 +17,6 @@ export const Contact = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-
       <div className="container mx-auto mt-24 text-center">
         <div className="max-w-2xl mx-auto">
           <form
