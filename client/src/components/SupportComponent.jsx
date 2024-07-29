@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "flowbite-react";
-import barcodeImage from "../images/collab/barcode.png"; // Adjust the path to your barcode image
+import barcodeImage from "../images/collab/barcode.jpeg"; // Adjust the path to your barcode image
 
 const SupportComponent = () => {
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +40,7 @@ const SupportComponent = () => {
             <img
               src={barcodeImage}
               alt="Support Barcode"
-              className="w-full h-auto max-w-[100%] object-contain mb-4"
+              className="w-auto h-auto max-w-full max-h-60 object-contain mb-4"
             />
             <p className="text-center text-gray-700">
               Scan the barcode to donate and support our page.

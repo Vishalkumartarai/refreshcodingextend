@@ -74,17 +74,6 @@ export default function Header() {
           </form>
         </div>
 
-        <Button
-          className="lg:hidden"
-          color="gray"
-          pill
-          onClick={() =>
-            document.getElementById("search-toggle").classList.toggle("hidden")
-          }
-        >
-          <AiOutlineSearch />
-        </Button>
-
         <div className="flex gap-2 md:order-2">
           {currentUser ? (
             <Dropdown
