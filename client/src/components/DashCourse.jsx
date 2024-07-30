@@ -14,7 +14,9 @@ export default function DashCourse() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch(`/api/course/getcourses?limit=100`);
+        const res = await fetch(
+          `${VITE_BACKEND_URL}/api/course/getcourses?limit=100`
+        );
         const data = await res.json();
         if (res.ok) {
           setCourses(data.courses);
@@ -35,7 +37,7 @@ export default function DashCourse() {
     const startIndex = courses.length;
     try {
       const res = await fetch(
-        `/api/course/getcourses?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${VITE_BACKEND_URL}/api/course/getcourses?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -53,7 +55,7 @@ export default function DashCourse() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
+        `${VITE_BACKEND_URL}/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
         }

@@ -16,7 +16,7 @@ export default function DashYouTubeVideos() {
     const fetchVideos = async () => {
       try {
         const res = await fetch(
-          `/api/youtube-videos/getvideos?userId=${currentUser._id}`
+          `${VITE_BACKEND_URL}/api/youtube-videos/getvideos?userId=${currentUser._id}`
         );
         const data = await res.json();
 
@@ -41,7 +41,7 @@ export default function DashYouTubeVideos() {
     const startIndex = videos.length;
     try {
       const res = await fetch(
-        `/api/youtube-videos/getvideos?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${VITE_BACKEND_URL}/api/youtube-videos/getvideos?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -59,7 +59,7 @@ export default function DashYouTubeVideos() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `/api/youtube-videos/deletevideo/${videoIdToDelete}`,
+        `${VITE_BACKEND_URL}/api/youtube-videos/deletevideo/${videoIdToDelete}`,
         {
           method: "DELETE",
         }

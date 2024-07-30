@@ -15,7 +15,9 @@ export default function CoursePage() {
     const fetchCourse = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/course/getcourse?slug=${courseSlug}`);
+        const res = await fetch(
+          `${VITE_BACKEND_URL}/api/course/getcourse?slug=${courseSlug}`
+        );
         const data = await res.json();
         if (!res.ok) {
           setError(true);
@@ -38,7 +40,9 @@ export default function CoursePage() {
   useEffect(() => {
     try {
       const fetchRecentCourses = async () => {
-        const res = await fetch(`/api/course/getcourses?limit=3`);
+        const res = await fetch(
+          `${VITE_BACKEND_URL}/api/course/getcourses?limit=3`
+        );
         const data = await res.json();
         if (res.ok) {
           setRecentCourses(data.courses);

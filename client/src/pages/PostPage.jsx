@@ -17,7 +17,7 @@ export default function PostPage() {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const res = await fetch('http://api.refreshcoding.com/api/post/getposts?');
+        const res = await fetch(`${VITE_BACKEND_URL}/api/post/getposts?`);
         const data = await res.json();
         if (!res.ok) {
           setError(true);
@@ -40,7 +40,7 @@ export default function PostPage() {
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
-        const res = await fetch('http://api.refreshcoding.com/api/post/getposts?limit=3');
+        const res = await fetch(`${VITE_BACKEND_URL}/api/post/getposts?limit=3`);
         const data = await res.json();
         if (res.ok) {
           setRecentPosts(data.posts);

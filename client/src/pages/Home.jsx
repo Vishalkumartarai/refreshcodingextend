@@ -176,7 +176,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch("/api/post/getPosts");
+        const res = await fetch(`${VITE_BACKEND_URL}/api/post/getPosts`);
         const data = await res.json();
         setPosts(data.posts);
       } catch (err) {
@@ -191,7 +191,7 @@ export default function Home() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("/api/course/getcourses?limit=4");
+        const res = await fetch(`${VITE_BACKEND_URL}/api/course/getcourses?limit=4`);
         const data = await res.json();
         setCourses(data.courses);
       } catch (err) {
@@ -206,7 +206,7 @@ export default function Home() {
   useEffect(() => {
     const fetchYoutubeVideos = async () => {
       try {
-        const res = await fetch("/api/youtube-videos/getvideos?limit=4");
+        const res = await fetch(`${VITE_BACKEND_URL}/api/youtube-videos/getvideos?limit=4`);
         const data = await res.json();
 
         setYoutubeVideos(data);

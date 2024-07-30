@@ -33,7 +33,9 @@ const UpdateCourse = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const res = await fetch(`/api/course/getcourse?courseId=${courseId}`);
+        const res = await fetch(
+          `${VITE_BACKEND_URL}/api/course/getcourse?courseId=${courseId}`
+        );
         const data = await res.json();
         if (!res.ok) {
           console.log(data.message);
@@ -126,7 +128,7 @@ const UpdateCourse = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `/api/course/update/${formData._id}/${currentUser._id}`,
+        `${VITE_BACKEND_URL}/api/course/update/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {

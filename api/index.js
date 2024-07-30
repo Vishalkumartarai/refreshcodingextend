@@ -51,10 +51,23 @@ import courseRoutes from "./routes/course.route.js";
 import youtubeVideoRoutes from "./routes/youtubeVideo.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
+import cors from 'cors';
+
+
 
 dotenv.config();
 
 const app = express();
+
+
+// Enable CORS for all origins (not recommended for production)
+app.use(cors());
+
+// Enable CORS for a specific origin
+app.use(cors({
+  origin: 'http://refreshcoding.com/'  // Your frontend domain
+}));
+
 
 app.use(express.json());
 app.use(cookieParser());
