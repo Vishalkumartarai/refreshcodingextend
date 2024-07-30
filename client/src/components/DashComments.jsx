@@ -165,7 +165,7 @@ export default function DashComments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`${VITE_BACKEND_URL}/api/comment/getcomments`);
+        const res = await fetch(`${process.env.VITE_BACKEND_URL}/api/comment/getcomments`);
         const data = await res.json();
         if (res.ok) {
           setComments(data.comments);
@@ -186,7 +186,7 @@ export default function DashComments() {
     const startIndex = comments.length;
     try {
       const res = await fetch(
-        `${VITE_BACKEND_URL}/api/comment/getcomments?startIndex=${startIndex}`
+        `${process.env.VITE_BACKEND_URL}/api/comment/getcomments?startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -204,7 +204,7 @@ export default function DashComments() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${VITE_BACKEND_URL}/api/comment/deleteComment/${commentIdToDelete}`,
+        `${process.env.VITE_BACKEND_URL}/api/comment/deleteComment/${commentIdToDelete}`,
         {
           method: "DELETE",
         }

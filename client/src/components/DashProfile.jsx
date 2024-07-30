@@ -104,7 +104,7 @@ export default function DashProfile() {
     try {
       dispatch(updateStart());
       const res = await fetch(
-        `${VITE_BACKEND_URL}/api/user/update/${currentUser._id}`,
+        `${process.env.VITE_BACKEND_URL}/api/user/update/${currentUser._id}`,
         {
           method: "PUT",
           headers: {
@@ -132,7 +132,7 @@ export default function DashProfile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `${VITE_BACKEND_URL}/api/user/delete/${currentUser._id}`,
+        `${process.env.VITE_BACKEND_URL}/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -150,7 +150,7 @@ export default function DashProfile() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch(`${VITE_BACKEND_URL}/api/user/signout`, {
+      const res = await fetch(`${process.env.VITE_BACKEND_URL}/api/user/signout`, {
         method: "POST",
       });
       const data = await res.json();

@@ -65,7 +65,7 @@ const CreateYouTubeVideo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${VITE_BACKEND_URL}/api/youtube-videos/create`, {
+      const res = await fetch(`${process.env.VITE_BACKEND_URL}/api/youtube-videos/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -102,7 +102,7 @@ const CreateCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${VITE_BACKEND_URL}/api/course/create`, {
+      const res = await fetch(`${process.env.VITE_BACKEND_URL}/api/course/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

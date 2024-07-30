@@ -34,7 +34,7 @@ const UpdateCourse = () => {
     const fetchCourse = async () => {
       try {
         const res = await fetch(
-          `${VITE_BACKEND_URL}/api/course/getcourse?courseId=${courseId}`
+          `${process.env.VITE_BACKEND_URL}/api/course/getcourse?courseId=${courseId}`
         );
         const data = await res.json();
         if (!res.ok) {
@@ -128,7 +128,7 @@ const UpdateCourse = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `${VITE_BACKEND_URL}/api/course/update/${formData._id}/${currentUser._id}`,
+        `${process.env.VITE_BACKEND_URL}/api/course/update/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {
