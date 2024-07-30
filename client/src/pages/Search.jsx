@@ -35,7 +35,7 @@ export default function Search() {
     const fetchPosts = async () => {
       setLoading(true);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/post/getposts?${searchQuery}`);
+      const res = await fetch(`http://api.refreshcoding.com/api/post/getposts?${searchQuery}`);
       if (!res.ok) {
         setLoading(false);
         return;
@@ -68,7 +68,7 @@ export default function Search() {
     const startIndex = posts.length;
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("startIndex", startIndex);
-    const res = await fetch(`/api/post/getposts?${urlParams.toString()}`);
+    const res = await fetch(`http://api.refreshcoding.com/api/post/getposts?${urlParams.toString()}`);
     if (!res.ok) {
       return;
     }

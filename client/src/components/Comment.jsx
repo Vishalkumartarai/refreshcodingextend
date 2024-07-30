@@ -13,7 +13,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await fetch(`/api/user/${comment.userId}`);
+        const res = await fetch(`http:\\api.refreshcoding.com/api/user/${comment.userId}`);
         const data = await res.json();
         if (res.ok) {
           setUser(data);
