@@ -3,7 +3,10 @@
 // import PostCard from "../components/PostCard";
 // import CourseCard from "../components/CourseCard"; // Adjust the import path as needed
 // import Projects from "./Projects";
-// import YouTubeVideoCard from "../components/YoutubeVideoCard"; // Import the new component
+// import YouTubeSlider from "../components/YoutubeSlider"; // Import the new component
+// import FAQComponent from "../components/FAQComponent";
+// import ReviewComponent from "../components/Review";
+// import SupportComponent from "../components/SupportComponent";
 
 // export default function Home() {
 //   const [posts, setPosts] = useState([]);
@@ -53,8 +56,8 @@
 //       try {
 //         const res = await fetch("/api/youtube-videos/getvideos?limit=4");
 //         const data = await res.json();
+
 //         setYoutubeVideos(data);
-//         console.log(data);
 //       } catch (err) {
 //         setErrorYoutubeVideos("Failed to fetch YouTube videos");
 //       } finally {
@@ -97,6 +100,7 @@
 //       </div>
 //       <div className="p-3 bg-slate-100 dark:bg-slate-700">
 //         <Projects />
+//         <ReviewComponent />
 //       </div>
 //       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
 //         {loadingPosts && <p>Loading posts...</p>}
@@ -113,7 +117,7 @@
 //               to={"/search"}
 //               className="text-lg text-teal-500 hover:underline text-center"
 //             >
-//               View all posts
+//               View all Blogs
 //             </Link>
 //           </div>
 //         )}
@@ -140,25 +144,9 @@
 //           </div>
 //         )}
 //       </div>
-//       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
-//         {loadingYoutubeVideos && <p>Loading YouTube videos...</p>}
-//         {errorYoutubeVideos && <p>{errorYoutubeVideos}</p>}
-//         {!loadingYoutubeVideos &&
-//           !errorYoutubeVideos &&
-//           youtubeVideos &&
-//           youtubeVideos.length > 0 && (
-//             <div className="flex flex-col gap-6">
-//               <h2 className="text-2xl font-semibold text-center">
-//                 Recent YouTube Videos
-//               </h2>
-//               <div className="flex flex-wrap gap-4">
-//                 {youtubeVideos.slice(0, 4).map((video) => (
-//                   <YouTubeVideoCard key={video._id} video={video} />
-//                 ))}
-//               </div>
-//             </div>
-//           )}
-//       </div>
+//       <YouTubeSlider videos={youtubeVideos} />
+//       <FAQComponent />
+//       <SupportComponent />
 //     </div>
 //   );
 // }
@@ -248,7 +236,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
+      <div className="flex flex-col gap-6 p-6 sm:p-28 px-3 max-w-6xl mx-auto w-full">
         <h1 className="text-3xl font-bold lg:text-6xl">
           {animateText("REFRESH CODING")}
         </h1>
@@ -262,18 +250,18 @@ export default function Home() {
           View all Blogs
         </Link>
       </div>
-      <div className="p-3 bg-slate-100 dark:bg-slate-700">
+      <div className="p-3 bg-slate-100 dark:bg-slate-700 w-full">
         <Projects />
         <ReviewComponent />
       </div>
-      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
+      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7 w-full">
         {loadingPosts && <p>Loading posts...</p>}
         {errorPosts && <p>{errorPosts}</p>}
         {!loadingPosts && !errorPosts && posts && posts.length > 0 && (
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 w-full">
             <h2 className="text-2xl font-semibold text-center">Recent Blogs</h2>
-            <div className="flex flex-wrap gap-4">
-              {posts.slice(0, 4).map((post) => (
+            <div className="flex flex-wrap gap-4 w-full">
+              {posts.slice(0, 6).map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
             </div>
@@ -286,16 +274,16 @@ export default function Home() {
           </div>
         )}
       </div>
-      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
+      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7 w-full">
         {loadingCourses && <p>Loading courses...</p>}
         {errorCourses && <p>{errorCourses}</p>}
         {!loadingCourses && !errorCourses && courses && courses.length > 0 && (
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 w-full">
             <h2 className="text-2xl font-semibold text-center">
               Recent Courses
             </h2>
-            <div className="flex flex-wrap gap-4">
-              {courses.slice(0, 4).map((course) => (
+            <div className="flex flex-wrap gap-4 w-full">
+              {courses.slice(0, 6).map((course) => (
                 <CourseCard key={course._id} course={course} />
               ))}
             </div>

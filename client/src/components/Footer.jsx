@@ -53,7 +53,7 @@ export default function FooterCom() {
                 <Footer.Title title="Follow us" />
                 <Footer.LinkGroup col>
                   <Footer.Link
-                    href="https://www.github.com/Vishalkumartarai"
+                    href="https://www.github.com/madhulika3016"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -101,7 +101,7 @@ export default function FooterCom() {
               />
 
               <Footer.Icon
-                href="https://github.com/Vishalkumartarai"
+                href="https://www.github.com/madhulika3016"
                 target="_blank"
                 icon={BsGithub}
               />
