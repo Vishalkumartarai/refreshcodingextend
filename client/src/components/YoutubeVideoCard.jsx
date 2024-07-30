@@ -16,14 +16,14 @@ const YouTubeVideoCard = ({ video }) => {
       }
     >
       <div
-        className={`w-full h-[60%] flex items-center justify-center p-4 transition-transform duration-300 bg-gray-100 dark:bg-slate-600 ${
+        className={`w-full h-[60%] flex items-center justify-center p-4 transition-transform duration-300 dark:bg-gray-100 bg-slate-600 ${
           isHovered ? "transform scale-105" : ""
         }`}
       >
         <img
           src={video.coverImage}
           alt={video.heading}
-          className="w-auto h-full object-cover rounded-[20px] shadow-md  dark:shadow-blue-600"
+          className="w-auto h-full object-cover rounded-[20px] shadow-lg shadow-blue-600 dark:shadow-blue-600"
         />
       </div>
       <div className="p-4 flex flex-col gap-2 h-[40%] justify-center items-center text-center bg-white dark:bg-slate-800">
