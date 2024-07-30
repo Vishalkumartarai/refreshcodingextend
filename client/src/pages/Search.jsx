@@ -36,7 +36,7 @@ export default function Search() {
       setLoading(true);
       const searchQuery = urlParams.toString();
       const res = await fetch(
-        `${process.env.VITE_BACKEND_URL}/api/post/getposts?${searchQuery}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?${searchQuery}`
       );
       if (!res.ok) {
         setLoading(false);
@@ -71,7 +71,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("startIndex", startIndex);
     const res = await fetch(
-      `${process.env.VITE_BACKEND_URL}/api/post/getposts?${urlParams.toString()}`
+      `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?${urlParams.toString()}`
     );
     if (!res.ok) {
       return;

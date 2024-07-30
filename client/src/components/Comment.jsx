@@ -14,7 +14,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
     const getUser = async () => {
       try {
         const res = await fetch(
-          `${process.env.VITE_BACKEND_URL}/api/user/${comment.userId}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/${comment.userId}`
         );
         const data = await res.json();
         if (res.ok) {
@@ -35,7 +35,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   const handleSave = async () => {
     try {
       const res = await fetch(
-        `${process.env.VITE_BACKEND_URL}/api/comment/editComment/${comment._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/comment/editComment/${comment._id}`,
         {
           method: "PUT",
           headers: {

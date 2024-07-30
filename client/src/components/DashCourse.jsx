@@ -15,7 +15,7 @@ export default function DashCourse() {
     const fetchCourses = async () => {
       try {
         const res = await fetch(
-          `${process.env.VITE_BACKEND_URL}/api/course/getcourses?limit=100`
+          `${import.meta.env.VITE_BACKEND_URL}/api/course/getcourses?limit=100`
         );
         const data = await res.json();
         if (res.ok) {
@@ -37,7 +37,7 @@ export default function DashCourse() {
     const startIndex = courses.length;
     try {
       const res = await fetch(
-        `${process.env.VITE_BACKEND_URL}/api/course/getcourses?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/course/getcourses?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -55,7 +55,7 @@ export default function DashCourse() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${process.env.VITE_BACKEND_URL}/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
         }

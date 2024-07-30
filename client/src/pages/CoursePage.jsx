@@ -16,7 +16,7 @@ export default function CoursePage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `${process.env.VITE_BACKEND_URL}/api/course/getcourse?slug=${courseSlug}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/course/getcourse?slug=${courseSlug}`
         );
         const data = await res.json();
         if (!res.ok) {
@@ -41,7 +41,7 @@ export default function CoursePage() {
     try {
       const fetchRecentCourses = async () => {
         const res = await fetch(
-          `${process.env.VITE_BACKEND_URL}/api/course/getcourses?limit=3`
+          `${import.meta.env.VITE_BACKEND_URL}/api/course/getcourses?limit=3`
         );
         const data = await res.json();
         if (res.ok) {

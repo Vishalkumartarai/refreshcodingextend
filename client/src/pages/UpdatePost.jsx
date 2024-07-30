@@ -29,7 +29,7 @@ export default function UpdatePost() {
     try {
       const fetchPost = async () => {
         const res = await fetch(
-          `${process.env.VITE_BACKEND_URL}/api/post/getposts?postId=${postId}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?postId=${postId}`
         );
         const data = await res.json();
         if (!res.ok) {
@@ -89,7 +89,7 @@ export default function UpdatePost() {
     e.preventDefault();
     try {
       const res = await fetch(
-        `${process.env.VITE_BACKEND_URL}/api/post/updatepost/${formData._id}/${currentUser._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/post/updatepost/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {

@@ -1,7 +1,7 @@
 // dotenv.config();
 
 // mongoose
-//   .connect(process.env.MONGO)
+//   .connect(import.meta.env.MONGO)
 //   .then(() => {
 //     console.log("MongoDb is connected");
 //   })
@@ -76,7 +76,7 @@ const __dirname = path.resolve();
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO, {
+  .connect(import.meta.env.MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
