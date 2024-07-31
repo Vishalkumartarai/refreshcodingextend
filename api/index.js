@@ -65,7 +65,7 @@ app.use(cors());
 
 // Enable CORS for a specific origin
 app.use(cors({
-  origin: 'http://refreshcoding.com/'  // Your frontend domain
+  origin: '*'  // Your frontend domain
 }));
 
 
@@ -76,7 +76,7 @@ const __dirname = path.resolve();
 
 // Connect to MongoDB
 mongoose
-  .connect(import.meta.env.MONGO, {
+  .connect(process.env.MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
