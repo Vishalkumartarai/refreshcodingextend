@@ -58,7 +58,7 @@ export const signin = async (req, res, next) => {
 
     res
       .status(200)
-      .cookie("access_token", token, {
+      .cookie("token", token, {
         httpOnly: true,
         secure: true,
         sameSite: 'None', // Use 'None' for cross-site cookies

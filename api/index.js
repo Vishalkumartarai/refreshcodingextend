@@ -60,13 +60,10 @@ dotenv.config();
 const app = express();
 
 
-// Enable CORS for all origins (not recommended for production)
-app.use(cors());
 
-// Enable CORS for a specific origin
 app.use(cors({
-  origin: '*',  // Your frontend domain
-credentials: true // Allow credentials (cookies, authorization headers, etc.)
+  origin: 'https://refreshcoding.com',  // Your frontend domain
+  credentials: true // Allow credentials (cookies, authorization headers, etc.)
 }));
 
 
