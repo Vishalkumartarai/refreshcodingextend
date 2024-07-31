@@ -65,7 +65,8 @@ app.use(cors());
 
 // Enable CORS for a specific origin
 app.use(cors({
-  origin: '*'  // Your frontend domain
+  origin: '*',  // Your frontend domain
+credentials: true // Allow credentials (cookies, authorization headers, etc.)
 }));
 
 
