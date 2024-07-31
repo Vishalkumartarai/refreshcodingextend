@@ -107,6 +107,7 @@ export default function DashProfile() {
         `${import.meta.env.VITE_BACKEND_URL}/api/user/update/${currentUser._id}`,
         {
           method: "PUT",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },
@@ -132,9 +133,12 @@ export default function DashProfile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/user/delete/${currentUser._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/delete/${
+          currentUser._id
+        }`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();

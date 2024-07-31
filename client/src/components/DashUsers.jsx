@@ -168,10 +168,13 @@ export default function DashUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/getusers`,{
-  method: 'GET', // or 'POST', 'PUT', etc.
-  credentials: 'include' // Include cookies with the request
-});
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/getusers`,
+          {
+            method: "GET", // or 'POST', 'PUT', etc.
+            credentials: "include", // Include cookies with the request
+          }
+        );
         const data = await res.json();
         if (res.ok) {
           setUsers(data.users);
@@ -192,10 +195,13 @@ export default function DashUsers() {
     const startIndex = users.length;
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/user/getusers?startIndex=${startIndex}`,{
-  method: 'GET', // or 'POST', 'PUT', etc.
-  credentials: 'include' // Include cookies with the request
-}
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/user/getusers?startIndex=${startIndex}`,
+        {
+          method: "GET", // or 'POST', 'PUT', etc.
+          credentials: "include", // Include cookies with the request
+        }
       );
       const data = await res.json();
       if (res.ok) {

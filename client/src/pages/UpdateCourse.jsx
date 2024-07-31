@@ -131,6 +131,7 @@ const UpdateCourse = () => {
         `${import.meta.env.VITE_BACKEND_URL}/api/course/update/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },

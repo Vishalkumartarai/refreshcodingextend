@@ -92,6 +92,7 @@ export default function UpdatePost() {
         `${import.meta.env.VITE_BACKEND_URL}/api/post/updatepost/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },

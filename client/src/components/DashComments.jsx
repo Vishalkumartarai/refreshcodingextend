@@ -165,7 +165,9 @@ export default function DashComments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments`
+        );
         const data = await res.json();
         if (res.ok) {
           setComments(data.comments);
@@ -186,7 +188,13 @@ export default function DashComments() {
     const startIndex = comments.length;
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments?startIndex=${startIndex}`
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/comment/getcomments?startIndex=${startIndex}`,
+        {
+          method: "GET", // or 'POST', 'PUT', etc.
+          credentials: "include", // Include cookies with the request
+        }
       );
       const data = await res.json();
       if (res.ok) {
@@ -204,9 +212,12 @@ export default function DashComments() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/comment/deleteComment/${commentIdToDelete}`,
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/comment/deleteComment/${commentIdToDelete}`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();

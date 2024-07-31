@@ -55,9 +55,12 @@ export default function DashCourse() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/course/deletecourse/${courseIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();

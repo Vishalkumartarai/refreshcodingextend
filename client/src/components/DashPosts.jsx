@@ -56,9 +56,12 @@ export default function DashPosts() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();

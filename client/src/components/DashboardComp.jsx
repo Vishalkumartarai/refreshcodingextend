@@ -32,7 +32,13 @@ export default function DashboardComp() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/getusers?limit=5`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/getusers?limit=5`,
+          {
+            method: "GET", // or 'POST', 'PUT', etc.
+            credentials: "include", // Include cookies with the request
+          }
+        );
         const data = await res.json();
         if (res.ok) {
           setUsers(data.users);
@@ -46,7 +52,9 @@ export default function DashboardComp() {
 
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?limit=5`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?limit=5`
+        );
         const data = await res.json();
         if (res.ok) {
           setPosts(data.posts);
@@ -60,7 +68,13 @@ export default function DashboardComp() {
 
     const fetchComments = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments?limit=5`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments?limit=5`,
+          {
+            method: "GET", // or 'POST', 'PUT', etc.
+            credentials: "include", // Include cookies with the request
+          }
+        );
         const data = await res.json();
         if (res.ok) {
           setComments(data.comments);
@@ -90,7 +104,11 @@ export default function DashboardComp() {
 
     const fetchYouTubeVideos = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/youtube-videos/getvideos?limit=5`);
+        const res = await fetch(
+          `${
+            import.meta.env.VITE_BACKEND_URL
+          }/api/youtube-videos/getvideos?limit=5`
+        );
         const data = await res.json();
         if (res.ok) {
           setYouTubeVideos(data);
