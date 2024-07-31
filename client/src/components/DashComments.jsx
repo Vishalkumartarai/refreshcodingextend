@@ -166,7 +166,11 @@ export default function DashComments() {
     const fetchComments = async () => {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments`
+          `${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments`,
+	{
+	 method: "GET", // or 'POST', 'PUT', etc.
+          credentials: "include", //
+        }
         );
         const data = await res.json();
         if (res.ok) {
