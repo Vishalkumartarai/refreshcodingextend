@@ -4,7 +4,9 @@ import { Button, Spinner } from "flowbite-react";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
-import BackButton from "../components/backButton"; // Adjust the path to where BackButton.js is located
+import BackButton from "../components/backButton";
+// Adjust the path to where BackButton.js is located
+import Card from "../components/Card";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -93,6 +95,7 @@ export default function PostPage() {
         </span>
       </div>
       <div className="ml-5 mt-12 mx-auto w-full max-w-[50%] md:max-w-[800px] md:ml-4">
+        {/* <Card content={post && post.content} /> */}
         <Card content={post && post.content} />
       </div>
       <CommentSection postId={post._id} />
