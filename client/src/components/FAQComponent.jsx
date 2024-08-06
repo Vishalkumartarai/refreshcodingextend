@@ -37,9 +37,9 @@ const questions = [
 
 const FAQComponent = () => {
   return (
-    <div className="my-8 bg-slate-100 dark:bg-slate-800 py-8 flex flex-col items-center">
+    <div className="my-8 bg-main-background dark:bg-slate-800 py-8 flex flex-col items-center">
       <h2 className="text-2xl font-bold text-center mb-6 text-black dark:text-white">
-        Most Asked <span className="text-yellow-300">Questions</span>
+        Most Asked <span className="text-green-500">Questions</span>
       </h2>
       <div className="container mx-auto grid grid-cols-1 gap-6 px-4">
         {questions.map(({ ques, ans }, index) => (

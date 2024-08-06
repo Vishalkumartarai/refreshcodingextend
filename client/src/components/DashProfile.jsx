@@ -104,10 +104,12 @@ export default function DashProfile() {
     try {
       dispatch(updateStart());
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/user/update/${currentUser._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/update/${
+          currentUser._id
+        }`,
         {
           method: "PUT",
-          credentials: 'include',
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
@@ -154,9 +156,12 @@ export default function DashProfile() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/signout`, {
-        method: "POST",
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/signout`,
+        {
+          method: "POST",
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         console.log(data.message);
@@ -169,7 +174,7 @@ export default function DashProfile() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-3 w-full">
+    <div className="max-w-lg mx-auto p-3 w-full bg-main-background">
       <BackButton />
       <h1 className="my-7 text-center font-semibold text-3xl">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -251,8 +256,7 @@ export default function DashProfile() {
             <Link to={"/create-post"}>
               <Button
                 type="button"
-                gradientDuoTone="purpleToPink"
-                className="w-full"
+                className="bg-gradient-to-r from-indigo-600 to-green-500 w-full"
               >
                 Create a post
               </Button>
@@ -270,8 +274,7 @@ export default function DashProfile() {
             <Link to={"/create-youtube-video"}>
               <Button
                 type="button"
-                gradientDuoTone="purpleToPink"
-                className="w-full"
+                className="bg-gradient-to-r from-indigo-600 to-green-500 w-full"
               >
                 Create a Youtube Video
               </Button>

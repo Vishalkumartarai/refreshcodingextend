@@ -17,7 +17,9 @@ export default function PostPage() {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?`
+        );
         const data = await res.json();
         if (!res.ok) {
           setError(true);
@@ -40,7 +42,9 @@ export default function PostPage() {
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?limit=3`);
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/post/getposts?limit=3`
+        );
         const data = await res.json();
         if (res.ok) {
           setRecentPosts(data.posts);
@@ -60,37 +64,40 @@ export default function PostPage() {
     );
 
   return (
-    <main className="p-3 flex flex-col w-fulll mx-auto min-h-screen">
+    <main className=" flex flex-col w-full mx-auto min-h-screen bg-main-background bg-white dark:bg-slate-700">
       <BackButton /> {/* Add the BackButton at the top */}
-      <h1 className="text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
+      <h1 className="text-2xl mt-6 p-3 text-center font-bold max-w-2xl mx-auto lg:text-3xl">
         {post && post.title}
       </h1>
       <Link
         to={`/search?category=${post && post.category}`}
-        className="self-center mt-5"
+        className="self-center mt-2"
       >
         <Button color="gray" pill size="xs">
           {post && post.category}
         </Button>
       </Link>
-      <img
-        src={post && post.image}
-        alt={post && post.title}
-        className="mt-10 p-3 max-h-[600px] w-full object-cover"
-      />
-      <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs">
-        <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
-        <span className="italic">
+      <div className="flex justify-center mt-6">
+        <img
+          src={post && post.image}
+          alt={post && post.title}
+          className="w-[500px] h-[300px] object-cover rounded-lg shadow-md"
+        />
+      </div>
+      <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-3xl text-sm">
+        <span className="font-semibold">
+          {post && new Date(post.createdAt).toLocaleDateString()}
+        </span>
+        <span className="italic font-semibold">
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span>
       </div>
-      <div
-        className="p-3 max-w-2xl mx-auto w-full post-content"
-        dangerouslySetInnerHTML={{ __html: post && post.content }}
-      ></div>
+      <div className="ml-5 mt-12 mx-auto w-full max-w-[50%] md:max-w-[800px] md:ml-4">
+        <Card content={post && post.content} />
+      </div>
       <CommentSection postId={post._id} />
       <div className="flex flex-col justify-center items-center mb-5">
-        <h1 className="text-xl mt-5">Recent articles</h1>
+        <h1 className="text-xl font-bold mt-5">Recent articles</h1>
         <div className="flex flex-wrap gap-5 mt-5 justify-center">
           {recentPosts &&
             recentPosts.map((post) => <PostCard key={post._id} post={post} />)}

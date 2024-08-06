@@ -2,6 +2,7 @@ import React from "react";
 import ScrollToTopButton from "../components/ScrollToTop";
 import ThemeToggleButton from "../components/ThemeToggle";
 import ContactButton from "../components/ContactButton";
+import SupportComponent from "./SupportComponent";
 
 const AllButton = () => {
   return (
@@ -18,6 +19,9 @@ const AllButton = () => {
         </div>
         <div className="p-2 ">
           <ContactButton />
+        </div>
+        <div className="p-2 ">
+          <SupportComponent />
         </div>
       </div>
     </div>

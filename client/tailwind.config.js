@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "custom-emerald": "#50c878",
+      },
       keyframes: {
         "fade-in-down": {
           "0%": {

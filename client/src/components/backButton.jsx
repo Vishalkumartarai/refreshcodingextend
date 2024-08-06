@@ -11,11 +11,10 @@ const BackButton = () => {
 
   return (
     <button
-      className="fixed top-2 left-2 sm:top-4 sm:left-4 flex items-center px-2 py-1 sm:px-4 sm:py-2 bg-blue-600 dark:bg-blue-400 text-white dark:text-gray-800 rounded-lg shadow-lg hover:bg-blue-500 dark:hover:bg-blue-300 transition duration-300"
+      className="fixed top-2 left-2 sm:top-4 sm:left-4 flex items-center px-2 py-1 sm:px-4 sm:py-2 bg-indigo-600 dark:bg-slate-200 text-white dark:text-gray-800 rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-300 transition duration-300"
       onClick={handleBackClick}
     >
       <FaArrowLeft className="mr-1 sm:mr-2" />
-      Back
     </button>
   );
 };

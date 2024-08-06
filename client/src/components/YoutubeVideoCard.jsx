@@ -8,7 +8,7 @@ const YouTubeVideoCard = ({ video }) => {
 
   return (
     <div
-      className="relative w-full max-w-[400px] h-[350px] border-4 bg-white dark:bg-slate-800 border-white-600 hover:border-blue-600 overflow-hidden rounded-[30px] transition-all duration-300 cursor-pointer mx-auto shadow-lg shadow-blue-500"
+      className="relative w-full max-w-[400px] h-[350px] border-4 bg-white dark:bg-slate-800 border-white-600 hover:border-indigo-600 overflow-hidden rounded-[30px] transition-all duration-300 cursor-pointer mx-auto shadow-lg shadow-indigo-600"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() =>
@@ -16,14 +16,14 @@ const YouTubeVideoCard = ({ video }) => {
       }
     >
       <div
-        className={`w-full h-[60%] flex items-center justify-center p-4 transition-transform duration-300 dark:bg-gray-100 bg-slate-600 ${
+        className={`w-full h-[60%] flex items-center justify-center p-4 transition-transform duration-300 ${
           isHovered ? "transform scale-105" : ""
         }`}
       >
         <img
           src={video.coverImage}
           alt={video.heading}
-          className="w-auto h-full object-cover rounded-[20px] shadow-lg shadow-blue-600 dark:shadow-blue-600"
+          className="w-full h-full object-cover rounded-[20px] shadow-lg shadow-indigo-600 dark:shadow-indigo-600"
         />
       </div>
       <div className="p-4 flex flex-col gap-2 h-[40%] justify-center items-center text-center bg-white dark:bg-slate-800">
@@ -34,7 +34,7 @@ const YouTubeVideoCard = ({ video }) => {
           {video.description}
         </span>
       </div>
-      <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
     </div>
   );
 };

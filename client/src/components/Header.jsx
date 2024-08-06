@@ -24,9 +24,12 @@ export default function Header() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/signout`, {
-        method: "POST",
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/signout`,
+        {
+          method: "POST",
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         console.log(data.message);
@@ -47,13 +50,13 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2 bg-white dark:bg-gray-800">
-      <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
+    <Navbar className="border-b-2 bg-gradient-to-r from-indigo-500 to-custom-emerald dark:bg-gray-800 w-full">
+      <div className="flex items-center justify-between w-full px-4">
         <Link
           to="/"
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
         >
-          <span className="px-2 py-1 bg-gradient-to-l from-indigo-600 via-purple-400 to-pink-300 rounded-lg text-white">
+          <span className="px-2 py-1 bg-gradient-to-l from-indigo-500 to-custom-emerald rounded-lg text-white">
             Refresh Coding
           </span>
         </Link>
@@ -107,7 +110,7 @@ export default function Header() {
       </div>
 
       <Navbar.Collapse>
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full max-w-7xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full px-4">
           <Navbar.Link active={path === "/"} as={"div"}>
             <Link to="/">Home</Link>
           </Navbar.Link>

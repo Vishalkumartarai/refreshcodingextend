@@ -20,11 +20,14 @@ export default function SignUp() {
     try {
       setLoading(true);
       setErrorMessage(null);
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         return setErrorMessage(data.message);
@@ -45,12 +48,12 @@ export default function SignUp() {
         {/* left */}
         <div className="flex-1">
           <Link to="/" className="font-bold dark:text-white text-4xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
-              Refresh
+            <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 to-custom-emerald rounded-lg text-white">
+              REFRESH
             </span>
-            Coding
+            CODING
           </Link>
-          
+          <p className="text-sm mt-5">.</p>
         </div>
         {/* right */}
 
@@ -84,7 +87,7 @@ export default function SignUp() {
               />
             </div>
             <Button
-              gradientDuoTone="purpleToPink"
+              className="bg-gradient-to-r from-indigo-500 to-custom-emerald"
               type="submit"
               disabled={loading}
             >

@@ -9,6 +9,7 @@ import mnc5Image from "../images/collab/Infosys.png";
 import mnc6Image from "../images/collab/itc.png";
 import mnc7Image from "../images/collab/lti.png";
 import mnc8Image from "../images/collab/syn.png";
+import mnc9Image from "../images/collab/wipro.png";
 import java from "../images/dealing/java.png";
 import atom from "../images/dealing/atom.png";
 import cloud from "../images/dealing/aws.png";
@@ -34,6 +35,7 @@ const Projects = () => {
     { name: "MNC 6 Name", image: mnc6Image },
     { name: "MNC 7 Name", image: mnc7Image },
     { name: "MNC 8 Name", image: mnc8Image },
+    { name: "MNC 9 Name", image: mnc9Image },
   ];
 
   const footPrint = [
@@ -83,7 +85,9 @@ const Projects = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6">
-        <h1 className="text-3xl font-semibold">MNC's Collaborated With</h1>
+        <h1 className="text-3xl font-semibold">
+          MNC's <span className="text-green-500">Collaborated </span>With{" "}
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
           {collab.map((item, index) => (
             <div

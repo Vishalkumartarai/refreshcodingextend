@@ -6,6 +6,7 @@ import shivam from "../images/review/shivam.jpeg";
 import prashant from "../images/review/prashant (1).jpeg";
 import mrinal from "../images/review/mrinal.jpeg";
 import vishal from "../images/review/vishal.jpeg";
+// import rohut from "../images/review/";
 
 const reviews = [
   {
@@ -43,6 +44,13 @@ const reviews = [
     heading: " Memorable Learning Experience",
     para: "Madhulika made our React training memorable. Her detailed explanations and commitment to covering every aspect made the learning experience enjoyable.",
   },
+  // {
+  //   image: rohit,
+  //   name: "Rohit Sharma",
+  //   redLink: "https://www.linkedin.com/in/rohit-sharma-854271210/",
+  //   heading: " Outstanding Training Experience",
+  //   para: "I was a total beginner in Java but Madhulika's guidance and her deep knowledge about all the topics made me feel more confident in my learning journey. She gave a thorough explanations on all the topics including Java 8, Spring Boot, React JS, JPA, JDBC and MySQL. No doubt why big MNC like Capgemini and many more trusts her with her work.",
+  // },
 ];
 
 const ReviewComponent = () => {
@@ -62,7 +70,7 @@ const ReviewComponent = () => {
         Learner's <span className="text-yellow-300">Reviews</span>
       </h2>
       <div className="container mx-auto flex justify-center">
-        <div className="review-box p-6 border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-all duration-700 ease-in-out bg-gray dark:bg-slate-400 w-96 text-center">
+        <div className="review-box p-6 border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-all duration-700 ease-in-out bg-white dark:bg-slate-600 w-96 text-center">
           <img
             src={reviews[currentReview].image}
             alt={reviews[currentReview].name}
@@ -79,7 +87,9 @@ const ReviewComponent = () => {
           >
             {reviews[currentReview].heading}
           </a>
-          <p className="text-gray-700">{reviews[currentReview].para}</p>
+          <p className="text-gray-700 dark:text-white">
+            {reviews[currentReview].para}
+          </p>
         </div>
       </div>
       <style jsx>{`

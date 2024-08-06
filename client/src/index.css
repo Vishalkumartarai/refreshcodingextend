@@ -5,8 +5,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  height: 100vh;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Specific component styles */
+.full-width-container {
+  width: 100vw;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.bg-main-background {
+  background-image: url("https://assets-global.website-files.com/62d6fb84ec041f09ae295df5/63bfd25e1fecb5493c907446_Group%2017.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .ql-editor {
@@ -41,4 +57,57 @@ body {
 
 .dark .post-content a {
   color: red;
+}
+/* Add this to your global CSS file */
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.2rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.section-home-image {
+  animation: floatImage 4s ease-in-out infinite;
+  box-shadow: 0 25px 50px #4f46e5; /* Adjust shadow color and transparency as needed */
+  background-color: #4f46e5; /* Adjust according to your Tailwind config */
+  border: 2px solid #4f46e5; /* Adjust according to your Tailwind config */
+  border-radius: 18px 95px 22px 50px !important;
+  width: 35vw; /* Default to full width */
+  height: 12vh;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .section-home-image {
+    width: 30vw; /* Adjust for small screens */
+    /* height: auto; */
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-home-image {
+    width: 60%; /* Adjust for medium screens */
+    /* height: auto; */
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-home-image {
+    width: 50%; /* Adjust for large screens */
+    /* height: auto; */
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-home-image {
+    width: 40%; /* Adjust for extra-large screens */
+    /* height: auto; */
+  }
 }

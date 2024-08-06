@@ -14,9 +14,9 @@ const SupportComponent = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center my-8">
+    <div className="relative flex flex-col items-center my-12">
       <button
-        className="sticky bottom-4 left-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
+        className="fixed bottom-6 left-20 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
         onClick={handleSupportClick}
       >
         Support Us
